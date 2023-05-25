@@ -25,7 +25,7 @@ $distance_km = isset($_POST['distance_km']) ? $_POST['distance_km'] : "";
 }
  
 // Fetch places from the database 
-$sql = "SELECT p.*".$sql_distance." FROM places p $having ORDER BY $order_by"; 
+$sql = "SELECT p.*".$sql_distance." FROM rc_propertylist p $having ORDER BY $order_by"; 
 $query = $db->query($sql);
  
 if($query->num_rows > 0){ 
@@ -41,7 +41,7 @@ if($query->num_rows > 0){
 <!-- <div class="row"> -->
 	<div class="col-sm-4 d-grid gap-3 py-2">
 		<div class="card">
-			<img src="img/img_avatar1.png" class="card-img-top" alt="...">
+			<img src="propertyimage/<?php echo $row['p_img'];?>" class="card-img-top" alt="...">
 			<div class="card-body">
 				<h5 class="card-title"><?php echo $row['title']; ?></h5>
 				<p class="card-text"><?php echo $row['address']; ?></p>
