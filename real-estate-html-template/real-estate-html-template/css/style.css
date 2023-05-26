@@ -438,3 +438,23 @@
     padding-right: 0;
     border-right: none;
 }
+.popUpDiv1 {
+    display: none;
+    position: fixed;
+    top: 45%;
+    left: 45%;
+    background-color: #eeeeee;
+    border: 5px solid #68ad0e;
+    min-width: 350px;
+    min-height: auto;
+    margin-left: -150px;
+    margin-top: -65px;
+    -moz-border-radius: 16px;
+    -webkit-border-radius: 16px;
+    border-radius: 5px;
+    box-shadow: 12px 0 15px -4px #000000,-12px 0 15px -4px#000000;
+    -moz-box-shadow: 12px 0 15px -4px #000000,-12px 0 15px -4px#000000;
+    -webkit-box-shadow: 12px 0 15px -4px #000000,-12px 0 15px -4px#000000;
+    z-index: 9002;
+    /*above nine thousand*/
+}

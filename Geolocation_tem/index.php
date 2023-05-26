@@ -61,10 +61,76 @@ require_once ('includes/dbConfig.php');
                         </div>
                     </div>
                 </div>
+				
+				<!-- SMS Modal -->
+<div id="pop_SMS" class="popUpDiv1">
+  <div style="width:100%;">
+    <form id="smsform">
+      <table class="table" style="margin:0;">
+        <tr>
+          <td>Client's Name</td>
+          <td><span style="font-weight:bold" id="clientname"></span>
+            <input name="cname" id="cname" type="hidden" value="" /></td>
+        </tr>
+        <tr>
+          <td>Client's Phone</td>
+          <td><span style="font-weight:bold" id="clientmobile"></span>
+            <input name="cphone" id="cphone" type="hidden" value="" /></td>
+        </tr>
+        <tr>
+          <td>Project</td>
+          <td><span style="font-weight:bold" id="clientproject"></span>
+            <input name="project" id="project" type="hidden" value="other" /></td>
+        </tr>
+        <tr>
+          <td>User Phone</td>
+          <td><span style="font-weight:bold" id="clientproject"></span>
+            <input name="project" id="project" type="hidden" value="other" />
+          </td>
+        </tr>
+        <tr>
+          <td><input type="submit" class="btn btn-default" id="smsshootnow" href="javascript:void(0);" value="Send SMS" /></td>
+          <td><a class="btn btn-default" id="cancelsms_" href="javascript:void(0);">Cancel</a></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>			
+<div class="modal fade" id="myModal_5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">  
+	<!-- Modal content-->
+	<div class="modal-content">
+		  <div class="modal-body">
+				<div class="formbox2">
+					  <h1><?php //echo $projectname; ?>Urban Avenues<span></span></h1>
+					<div class="col-sm-12 top_form" style="position:relative;">
+					<h2>Contact With Us!</h2>
+					<form id="callback-save5" class="enquiryform clearfix">
+					<div id="note"></div>
+						<div class="form_inner1">
+						  <input type="text" name="name" id="name" class="form-control1" maxlength="100" placeholder="Full Name" required />
+							<input type="text" name="mob10" id="mob10" class="form-control1" maxlength="13" placeholder="Phone Number" required />
+							<input type="hidden" name="mobile" id="mobile" value="" />
+							<input type="email" name="email" id="email" class="form-control1" placeholder="Email Address" required />
+							<!-- <textarea name="message" class="form-control1" rows="3" placeholder="Query(Optional)..."></textarea> -->
+							<input type="submit" name="submit" value="Send" id="submit" class="btn btn btn-warning btn-block" />
+							<input type="hidden" name="project" value="<?php //echo $projectcode; ?>" />
+							<input type="hidden" name="projectname" value="<?php //echo $projectname; ?>" />
+							<input type="hidden" id="urllist" name="urllist" value="<?php //echo $link; ?>" class="form-control" />
+							<input type="hidden" id="ip" name="ip" value="<?php //echo $ip; ?>" class="form-control" />
+							<button type="button" class="btn btn-light float-end" id="cancelsms" href="javascript:void(0);">Cancel</button>
+						</div>
+					</form>
+				   </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>				
+							
             </div>
         </div>
         <!-- Property List End -->
-
 <?php 
 include('includes/footer.php');
 ?>

@@ -74,7 +74,6 @@
     </div>
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
@@ -83,6 +82,32 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+	<script type="text/javascript">
+$(document).ready(function() {
+$('.smssender').click(function() {
+	console.log("ok");
+	/* var $row = $(this).closest("tr");    // Find the row
+    var $smscname = $row.find(".smsname").text();
+	var $smscmobile = $row.find(".smsmobile").text();
+	var $smscproject = $row.find(".smsproject").text();
+	var $smsphone = $row.find(".smsuphone").val();
+    
+	$("#clientname").text($smscname);
+	$("#clientmobile").text($smscmobile);
+	$("#clientproject").text($smscproject);
+	$("input[id='cname']").val($smscname);
+	$("input[id='cphone']").val($smscmobile);
+	$("input[id='project']").val($smscproject);
+	
+	$("#uphone").val($smsphone); */
+	
+    $('#myModal_5').modal('show');
+});
+$('#cancelsms').click(function() {
+	$('#myModal_5').modal('hide');
+});
+});
+</script>
 </body>
 
 </html>
