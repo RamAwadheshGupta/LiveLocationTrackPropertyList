@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Get User Location</title>
+</head>
+<body>
+	<p>Click the button to get your live location.</p>
+	
+	<button id="get-location">Get Location</button>
+	<p id="demo"></p>
+	<script>
+	function getLocation() {
+  if (!navigator.geolocation) {
+    console.log('Geolocation API not supported by this browser.');
+  } else {
+    console.log('Checking location...');
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
+}
+
+function success(position) {
+  console.log(position);
+}
+function error() {
+  console.log('Geolocation error!');
+}
+document.getElementById('get-location').addEventListener('click', getLocation);
+
+
+	/* var x = document.getElementById("demo");
+	function getLocation() {
+	  	if (navigator.geolocation) {
+	    	navigator.geolocation.getCurrentPosition(showPosition);
+	  	} else { 
+	    	x.innerHTML = "Geolocation is not supported by this browser.";
+	  	}
+	}
+
+	function showPosition(position) {
+		console.log(position);
+	  	x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+	} */
+	</script>
+</body>
+</html>

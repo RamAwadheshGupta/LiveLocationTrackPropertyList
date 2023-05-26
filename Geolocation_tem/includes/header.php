@@ -22,48 +22,52 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-	
-	<script>
+<script>
 	let x = document.getElementById("latitude");
 	
 	function getLocation(){
-		if(navigator.geolocation){
-			navigator.geolocation.getCurrentPosition(showPosition);
+		if(!navigator.geolocation){
+			console.log('Geolocation API not supported by this browser.');
 		}else{
-			x.innerHTML="Geolocation in not supported by this browser";
+			console.log('Checking location...');
+			navigator.geolocation.getCurrentPosition(showPosition, error);
 		}
 	}
 	function showPosition(position){
 		document.getElementById('latitude').value=position.coords.latitude;
-		document.getElementById('longitude').value=position.coords.longitude;
+		document.getElementById('longitude').value=position.coords.longitude;	
+		geopage();
 	}
 	getLocation();
-//page load 
-function geopage(){
-	let lant = document.getElementById('latitude').value;
-	let lont = document.getElementById('longitude').value;
-	let distance_km = document.getElementById('distance_km').value;
-	$.ajax({
-		type:"POST",
-		url:"getGeolocationData.php",
-		data:"latitude=" +lant+ "&longitude=" +lont+ "&distance_km=" +distance_km,
-		beforeSend:function(){
-			$('#loader').show();
-		},
-		success:function(data){
-			$('.dataCall').html(data);
-			//console.log(data);
-			$('#loader').hide();
-			
+		function error() {
+		  console.log('Geolocation error!');
+		  geopage();
 		}
-	});
-}
+//page load 
+	function geopage(){
+		let lant = document.getElementById('latitude').value;
+		let lont = document.getElementById('longitude').value;
+		let distance_km = document.getElementById('distance_km').value;
+		$.ajax({
+			type:"POST",
+			url:"getGeolocationData.php",
+			data:"latitude=" +lant+ "&longitude=" +lont+ "&distance_km=" +distance_km,
+			beforeSend:function(){
+				$('#loader').show();
+			},
+			success:function(data){
+				$('.dataCall').html(data);
+				//console.log(data);
+				$('#loader').hide();
+				
+			}
+		});
+	}
 </script>
-	
-	
 </head>
 
-<body onload="geopage()">
+<!-- <body onload="geopage_12()"> -->
+<body>
 <div id="loader"><img src="img/loading-lightbox.gif" /></div>
     <div class="container-xxl bg-white p-0">
         <!-- Spinner Start -->

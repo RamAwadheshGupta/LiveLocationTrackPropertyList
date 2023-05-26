@@ -25,6 +25,7 @@ require_once ('includes/dbConfig.php');
                 <div class="tab-content">
                     <div id="tab-1" class="tab-pane fade show p-0 active">
 					<div class="container text-center">
+					<div id="latitudes"></div>
 					<form method="post" action="">
 						<input type="hidden" name="loc_latitude" id="latitude" value="<?php echo !empty($latitude)?$latitude:''; ?>">
 						<input type="hidden" name="loc_longitude" id="longitude" value="<?php echo !empty($longitude)?$longitude:''; ?>">
